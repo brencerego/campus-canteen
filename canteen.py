@@ -22,7 +22,7 @@ def calculate_total(items):
             raise ValueError("price and quantity must not be negative")
         subtotal += price * qty
 
-    if subtotal >= DISCOUNT_THRESHOLD:
+    if subtotal > DISCOUNT_THRESHOLD:
         subtotal -= subtotal * DISCOUNT_RATE
 
     total = subtotal * (1 + GST_RATE)
